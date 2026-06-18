@@ -202,16 +202,41 @@
 <!-- SERVICES -->
 <section id="services">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow mono">What we do</span><h2>Our Services</h2><p>Intelligent software and automation, delivered end to end.</p></div>
-    <div class="svc-grid" id="svcGrid">
-      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z"/></svg></div><h3>AI Automation</h3><p>Automate repetitive tasks and workflows with intelligent, self-improving systems.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
-      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg></div><h3>Custom Software Development</h3><p>Bespoke software built around how your business actually works.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
-      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Web Application Development</h3><p>Fast, secure, scalable web apps using modern frameworks and best practices.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
-      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>AI Chatbots</h3><p>Conversational assistants that handle support and capture leads around the clock.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
-      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4zM14 14h6v6h-6zM10 7h4M17 10v4"/></svg></div><h3>Business Process Automation</h3><p>Connect tools and remove manual steps so teams focus on higher-value work.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
-      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 013 3v6"/></svg></div><h3>System Integrations</h3><p>Make your existing platforms talk to each other through reliable integrations.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    <div class="sec-head reveal">
+      <span class="eyebrow mono">What we do</span>
+      <h2>Our Services</h2>
+      <p>Click any node to explore — orbit pauses and reveals full details.</p>
     </div>
-    <div class="svc-foot reveal"><a href="#services" class="btn btn-ghost"><span>View All Services</span></a></div>
+
+    <!-- Radial Orbital (desktop) -->
+    <div class="svc-orb-wrap" id="svcOrbWrap">
+      <div class="svc-orb-track"></div>
+      <div class="svc-orb-track2"></div>
+      <!-- Center hub -->
+      <div class="svc-orb-center" id="svcOrbCenter">
+        <div class="orb-ping a"></div>
+        <div class="orb-ping b"></div>
+        <div class="orb-ping c"></div>
+        <div class="orb-hub-bg">
+          <div class="orb-hub-inner">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z"/></svg>
+            <span>AI Core</span>
+          </div>
+        </div>
+        <span class="orb-hub-pause">● Paused</span>
+      </div>
+      <!-- nodes + cards injected by JS -->
+    </div>
+
+    <!-- Mobile 2-col grid fallback -->
+    <div class="svc-mob">
+      <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z"/></svg></div><h3>AI Automation</h3><p>Self-improving automation that learns and scales with your business.</p></div>
+      <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg></div><h3>Custom Software</h3><p>Bespoke software built around how your business actually works.</p></div>
+      <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Web Apps</h3><p>Fast, secure, scalable web applications for any device.</p></div>
+      <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3>AI Chatbots</h3><p>24/7 conversational AI for support and lead capture.</p></div>
+      <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4zM14 14h6v6h-6zM10 7h4M17 10v4"/></svg></div><h3>Process Automation</h3><p>Remove manual steps so teams focus on high-value work.</p></div>
+      <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 013 3v6"/></svg></div><h3>Integrations</h3><p>Make your platforms communicate reliably and at scale.</p></div>
+    </div>
   </div>
 </section>
 
