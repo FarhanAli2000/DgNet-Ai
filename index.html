@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DgNetAi — Digital Networking Through AI</title>
+<meta name="description" content="DgNetAi helps businesses automate workflows, improve customer experiences, and grow through intelligent software, AI automation, and modern web technologies." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- shared gradient def for logo -->
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="lgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5DF7FF"/><stop offset="1" stop-color="#0072FF"/></linearGradient></defs></svg>
+
+<!-- PRELOADER -->
+<div id="loader">
+  <span class="mark" style="width:74px;height:74px;border-radius:20px;box-shadow:0 0 40px -8px var(--blue)">
+    <svg viewBox="0 0 48 48" style="width:46px;height:46px">
+      <g><line class="lg-line" x1="24" y1="11" x2="24" y2="24"/><line class="lg-line" x1="24" y1="24" x2="13" y2="37"/><line class="lg-line" x1="24" y1="24" x2="35" y2="37"/><line class="lg-line" x1="13" y1="37" x2="35" y2="37"/></g>
+      <circle class="lg-node" cx="24" cy="11" r="3.4"/><circle class="lg-node" cx="13" cy="37" r="3.4" style="animation-delay:.4s"/><circle class="lg-node" cx="35" cy="37" r="3.4" style="animation-delay:.8s"/>
+      <circle class="lg-core" cx="24" cy="24" r="4.6"/>
+    </svg>
+  </span>
+  <div class="load-name">Dg<b>Net</b><span class="ai" style="background:linear-gradient(115deg,#00D4FF,#5DF7FF);-webkit-background-clip:text;background-clip:text;color:transparent">Ai</span></div>
+  <div class="load-bar"><i></i></div>
+</div>
+
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <span class="mark">
+        <svg viewBox="0 0 48 48">
+          <g><line class="lg-line" x1="24" y1="11" x2="24" y2="24"/><line class="lg-line" x1="24" y1="24" x2="13" y2="37"/><line class="lg-line" x1="24" y1="24" x2="35" y2="37"/><line class="lg-line" x1="13" y1="37" x2="35" y2="37"/></g>
+          <circle class="lg-node" cx="24" cy="11" r="3.4"/><circle class="lg-node" cx="13" cy="37" r="3.4" style="animation-delay:.4s"/><circle class="lg-node" cx="35" cy="37" r="3.4" style="animation-delay:.8s"/>
+          <circle class="lg-core" cx="24" cy="24" r="4.6"/>
+        </svg>
+      </span>
+      DgNet<span class="ai">Ai</span>
+    </a>
+    <div class="nav-links" id="navlinks">
+      <a class="lnk" href="#about">About</a>
+      <a class="lnk" href="#services">Services</a>
+      <a class="lnk" href="#work">Portfolio</a>
+      <a class="lnk" href="#industries">Industries</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary nav-cta-d"><span>Get Free Consultation</span></a>
+    </div>
+    <button class="hamb" id="hamb"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top">
+  <canvas id="neural"></canvas>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag"><span class="pill"></span><span class="mono">Digital Networking Through AI</span></div>
+        <h1 class="hero">Transform Your Business Through <span class="grad" id="typingText">AI-Powered Innovation.</span><span class="type-cursor"></span></h1>
+        <p class="hero-sub">DgNetAi helps businesses automate workflows, improve customer experiences, and grow through intelligent software solutions, AI automation, and modern web technologies.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary magnet"><span>Get Free Consultation</span>
+            <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="#work" class="btn btn-ghost"><span>View Our Work</span></a>
+        </div>
+        <div class="hero-stats" id="heroStats">
+          <div class="hstat"><div class="hstat-val"><span id="cnt1">0</span><sup>+</sup></div><small>Projects Delivered</small></div>
+          <div class="hstat"><div class="hstat-val"><span id="cnt2">0</span><sup>%</sup></div><small>Client Satisfaction</small></div>
+          <div class="hstat"><div class="hstat-val"><span id="cnt3">0</span><sup>+</sup></div><small>AI Solutions Built</small></div>
+        </div>
+      </div>
+      <div class="ai-illus" id="illus" style="animation:heroIn 1.1s cubic-bezier(.16,1,.3,1) .3s both,float 7s ease-in-out 1.5s infinite">
+        <div class="orb-wrap o1"><div class="orb-dot"></div></div>
+        <div class="orb-wrap o2"><div class="orb-dot"></div></div>
+        <div class="orb-wrap o3"><div class="orb-dot"></div></div>
+        <!-- VIP Floating Cards -->
+        <div class="vcard vc1">
+          <div class="vc-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5df7ff" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+            <span class="vc-lbl">AI Accuracy</span>
+          </div>
+          <div class="vc-val">99.8<sub>%</sub></div>
+          <div class="vc-bar"><div class="vc-fill" style="--fw:99.8%"></div></div>
+        </div>
+        <div class="vcard vc2">
+          <div class="vc-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span class="vc-lbl">Response Time</span>
+          </div>
+          <div class="vc-val">0.28<sub>s</sub></div>
+          <div class="vc-row"><span class="vc-pip"></span>Blazing Fast</div>
+        </div>
+        <div class="vcard vc3">
+          <div class="vc-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+            <span class="vc-lbl">Tasks Automated</span>
+          </div>
+          <div class="vc-val">12,847</div>
+          <div class="vc-up">↑ 23% this week</div>
+        </div>
+        <div class="hero-video">
+          <video autoplay muted loop playsinline preload="metadata" aria-label="AI network animation">
+            <source src="video/8631881-uhd_3840_2160_25fps.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-mouse"></div>Scroll</div>
+</header>
+
+<!-- WHO -->
+<section id="about">
+  <div class="wrap who">
+    <div class="card glass reveal">
+      <span class="eyebrow mono">Who we are</span>
+      <h2>Digital Networking Through AI</h2>
+      <p>At DgNetAi, we combine artificial intelligence, automation, and custom software development to help organisations work smarter and more efficiently. Whether a startup, small business, or growing enterprise, our solutions aim to streamline operations, improve customer engagement, and support growth.</p>
+    </div>
+    <div class="who-vis reveal">
+      <svg viewBox="0 0 400 360" preserveAspectRatio="xMidYMid slice">
+        <g stroke="#00d4ff55" stroke-width="1" fill="none">
+          <path class="edge" d="M70 90 L200 180 L330 90"/>
+          <path class="edge" d="M70 270 L200 180 L330 270" style="animation-delay:.6s"/>
+          <path class="edge" d="M70 90 L70 270" style="animation-delay:1s"/>
+          <path class="edge" d="M330 90 L330 270" style="animation-delay:.3s"/>
+        </g>
+        <g fill="#00D4FF"><circle cx="70" cy="90" r="6"/><circle cx="330" cy="90" r="6"/><circle cx="70" cy="270" r="6"/><circle cx="330" cy="270" r="6"/></g>
+        <circle class="node core" cx="200" cy="180" r="14" fill="#5DF7FF" style="transform-origin:200px 180px"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow mono">Why DgNetAi</span><h2>Built to make AI work for your business</h2></div>
+    <div class="feat-grid">
+      <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div><h3>Innovative Thinking</h3><p>We use current AI technologies to solve real business challenges.</p></div>
+      <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3h7v7H3zM14 3h7v4h-7zM14 11h7v10h-7zM3 14h7v7H3z"/></svg></div><h3>Tailored Solutions</h3><p>Every project is customised to meet your specific objectives.</p></div>
+      <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Reliable Support</h3><p>We build long-term partnerships and provide ongoing assistance.</p></div>
+      <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></div><h3>Future Ready</h3><p>Solutions are designed to scale as your business grows.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWREEL -->
+<section class="reel-section">
+  <div class="reel-outer">
+    <div class="reel-head reveal">
+      <span class="eyebrow mono">AI in Action</span>
+      <h2 style="font-size:clamp(26px,3.8vw,42px);margin-top:6px">See Our Technology at Work</h2>
+      <p style="color:var(--muted);margin-top:14px;font-size:16px">Intelligent systems transforming how businesses operate.</p>
+    </div>
+    <div class="reel-frame" id="reelFrame">
+      <video autoplay muted loop playsinline preload="metadata" aria-label="DgNetAi technology showreel">
+        <source src="video/8631881-uhd_3840_2160_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="reel-overlay"></div>
+      <div class="reel-lines"></div>
+      <div class="reel-sweep"></div>
+      <div class="reel-glow-ring"></div>
+      <svg class="reel-svg-border" viewBox="0 0 1600 900" preserveAspectRatio="none">
+        <rect class="reel-rect" x="1.5" y="1.5" width="1597" height="897" rx="22"/>
+      </svg>
+      <div class="reel-corner tl"></div>
+      <div class="reel-corner tr"></div>
+      <div class="reel-corner bl"></div>
+      <div class="reel-corner br"></div>
+      <div class="reel-badge"><span class="dot"></span><span class="rtxt">Live Demo</span></div>
+      <div class="reel-caption">
+        <span class="eyebrow mono">Powered by AI</span>
+        <h3>Automation. Intelligence. Growth.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow mono">Our process</span><h2>From first idea to continuous growth</h2></div>
+    <div class="timeline reveal" id="timeline">
+      <div class="rail"><i></i></div>
+      <div class="pstep"><div class="dot">1</div><h4>Discover</h4><p>Understanding your goals and challenges.</p></div>
+      <div class="pstep"><div class="dot">2</div><h4>Plan</h4><p>Designing the right solution strategy.</p></div>
+      <div class="pstep"><div class="dot">3</div><h4>Develop</h4><p>Building and testing the solution.</p></div>
+      <div class="pstep"><div class="dot">4</div><h4>Launch</h4><p>Deployment and optimisation.</p></div>
+      <div class="pstep"><div class="dot">5</div><h4>Grow</h4><p>Continuous improvement and support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow mono">What we do</span><h2>Our Services</h2><p>Intelligent software and automation, delivered end to end.</p></div>
+    <div class="svc-grid" id="svcGrid">
+      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z"/></svg></div><h3>AI Automation</h3><p>Automate repetitive tasks and workflows with intelligent, self-improving systems.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg></div><h3>Custom Software Development</h3><p>Bespoke software built around how your business actually works.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Web Application Development</h3><p>Fast, secure, scalable web apps using modern frameworks and best practices.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>AI Chatbots</h3><p>Conversational assistants that handle support and capture leads around the clock.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4zM14 14h6v6h-6zM10 7h4M17 10v4"/></svg></div><h3>Business Process Automation</h3><p>Connect tools and remove manual steps so teams focus on higher-value work.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <div class="svc reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 013 3v6"/></svg></div><h3>System Integrations</h3><p>Make your existing platforms talk to each other through reliable integrations.</p><a class="learn" href="#contact">Learn More <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    </div>
+    <div class="svc-foot reveal"><a href="#services" class="btn btn-ghost"><span>View All Services</span></a></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow mono">Featured work</span><h2>Selected projects</h2><p>Placeholder case studies — replaced with real client work at launch.</p></div>
+    <div class="proj-grid">
+      <div class="proj reveal"><div class="top t1"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h6"/></svg></div><div class="body"><div class="meta"><span>Real Estate</span><span>AI Automation</span></div><h3>Smart Lead Router</h3><p>An AI system that scores and routes property enquiries automatically.</p><a class="learn" href="#contact">View Case Study <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></div>
+      <div class="proj reveal"><div class="top t2"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="body"><div class="meta"><span>Healthcare</span><span>AI Chatbot</span></div><h3>Patient Assist Bot</h3><p>A 24/7 assistant handling appointment booking and triage questions.</p><a class="learn" href="#contact">View Case Study <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></div>
+      <div class="proj reveal"><div class="top t3"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 5-7"/></svg></div><div class="body"><div class="meta"><span>Ecommerce</span><span>Web App</span></div><h3>Insights Dashboard</h3><p>A real-time analytics platform unifying sales and customer data.</p><a class="learn" href="#contact">View Case Study <span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow mono">Industries we serve</span><h2>Trusted across sectors</h2></div>
+    <div class="ind-grid">
+      <div class="ind ind-left"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg></div><span>Real Estate</span></div>
+      <div class="ind ind-left"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z"/></svg></div><span>Healthcare</span></div>
+      <div class="ind ind-left"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 5 3 5 3s5-2 5-3v-5"/></svg></div><span>Education</span></div>
+      <div class="ind ind-left"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 13h11l1.5-8H6"/></svg></div><span>Ecommerce</span></div>
+      <div class="ind ind-right"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><span>Professional Services</span></div>
+      <div class="ind ind-right"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div><span>Startups</span></div>
+      <div class="ind ind-right"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="6" width="14" height="11" rx="1"/><path d="M15 9h4l3 3v5h-7"/><circle cx="6" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg></div><span>Logistics</span></div>
+      <div class="ind ind-right"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l6 3V8l6 3V5l6 3v13z"/></svg></div><span>Manufacturing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow mono">Client stories</span><h2>What clients say</h2></div>
+    <div class="carousel glass reveal">
+      <div class="slides" id="slides">
+        <div class="slide active"><div class="stars">★★★★★</div><p class="q">"DgNetAi delivered exactly what our business needed and exceeded expectations."</p><div class="who2"><b>Operations Director</b> · Enterprise Client</div></div>
+        <div class="slide"><div class="stars">★★★★★</div><p class="q">"The automation solution significantly improved our operational efficiency."</p><div class="who2"><b>Founder</b> · Growing Business</div></div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="cta reveal">
+      <canvas id="ctaParticles"></canvas>
+      <div class="inner">
+        <span class="eyebrow mono" style="justify-content:center;display:inline-flex">Let's build</span>
+        <h2>Ready to Build Smarter Solutions?</h2>
+        <p>Let's discuss how AI and software can help your business grow.</p>
+        <div class="cta-btns">
+          <a href="mailto:info@dgnetai.com" class="btn btn-primary magnet"><span>Schedule Consultation</span><span class="circ"><svg class="ring" viewBox="0 0 40 40"><circle class="rb" cx="20" cy="20" r="18"/><circle class="rp" cx="20" cy="20" r="18"/></svg><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a href="mailto:info@dgnetai.com" class="btn btn-ghost"><span>Contact Us</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><span class="mark"><svg viewBox="0 0 48 48"><g><line class="lg-line" x1="24" y1="11" x2="24" y2="24"/><line class="lg-line" x1="24" y1="24" x2="13" y2="37"/><line class="lg-line" x1="24" y1="24" x2="35" y2="37"/><line class="lg-line" x1="13" y1="37" x2="35" y2="37"/></g><circle class="lg-node" cx="24" cy="11" r="3.4"/><circle class="lg-node" cx="13" cy="37" r="3.4" style="animation-delay:.4s"/><circle class="lg-node" cx="35" cy="37" r="3.4" style="animation-delay:.8s"/><circle class="lg-core" cx="24" cy="24" r="4.6"/></svg></span>DgNet<span class="ai">Ai</span></a>
+        <p>Digital Networking Through AI — intelligent software, automation and modern web technologies.</p>
+        <div class="news reveal">
+          <input type="email" placeholder="Your email for updates" aria-label="Email for newsletter" />
+          <button class="btn btn-primary" onclick="subscribe()"><span>Subscribe</span></button>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><a href="#top">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#">Blog</a><a href="#contact">Contact</a></div>
+      <div class="foot-col"><h4>Contact</h4><a href="mailto:info@dgnetai.com">info@dgnetai.com</a><a href="https://www.dgnetai.com">www.dgnetai.com</a></div>
+      <div class="foot-col"><h4>Follow</h4>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 14a4 4 0 018 0v7"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 3h-3a4 4 0 00-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 DgNetAi — Digital Networking Through AI.</div>
+  </div>
+</footer>
+
+<a href="#contact" class="sticky-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Book Consultation</a>
+
+<script src="script.js"></script>
+</body>
+</html>
