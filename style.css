@@ -612,6 +612,11 @@ h1.hero .grad {
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   opacity: 0;
   transform: translateY(18px);
   transition:
@@ -648,6 +653,7 @@ h1.hero .grad {
   color: transparent;
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 2px;
   line-height: 1;
 }
@@ -659,6 +665,7 @@ h1.hero .grad {
   font-size: 11.5px;
   margin-top: 5px;
   display: block;
+  text-align: center;
 }
 .hero-scroll {
   position: absolute;
@@ -2365,21 +2372,58 @@ footer {
   header {
     height: auto;
     min-height: 100svh;
-    padding: 90px 0 40px;
+    padding: 96px 0 56px;
+    max-height: none;
+    align-items: flex-start;
   }
   .hero-grid,
   .who {
     grid-template-columns: 1fr;
-    gap: 34px;
+    gap: 36px;
+  }
+  .hero-copy {
+    order: -1;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-width: 0;
+  }
+  .tagline-pill {
+    white-space: normal;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .hero-tag .mono,
+  h1.hero,
+  .hero-sub {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .hero-tag .mono {
+    flex: 1 1 auto;
+    white-space: normal;
+  }
+  .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-cta,
+  .hero-stats {
+    justify-content: center;
   }
   .ai-illus {
-    max-width: 320px;
+    width: min(330px, 86vw);
+    max-width: none;
     margin: 0 auto;
-    order: -1;
+    order: 0;
   }
   .hero-video {
     inset: 6%;
     border-radius: 22px;
+  }
+  .hero-scroll {
+    display: none;
   }
   .feat-grid,
   .svc-grid,
@@ -2398,6 +2442,22 @@ footer {
   }
   .foot-top {
     grid-template-columns: 1fr 1fr;
+  }
+  nav {
+    padding: 12px 0;
+  }
+  .nav-inner {
+    gap: 16px;
+    min-width: 0;
+  }
+  .logo {
+    min-width: 0;
+  }
+  nav .logo {
+    min-height: 46px;
+  }
+  nav.scrolled .logo {
+    min-height: 38px;
   }
   .nav-links {
     position: fixed;
@@ -2421,12 +2481,19 @@ footer {
   .hamb {
     display: flex;
     z-index: 100;
+    flex: 0 0 auto;
   }
   .nav-cta-d {
     display: none;
   }
   section {
     padding: 78px 0;
+  }
+  .who .card {
+    padding: 34px 28px;
+  }
+  .reel-section {
+    padding: 0 0 84px;
   }
   .reel-caption {
     white-space: normal;
@@ -2436,6 +2503,253 @@ footer {
   }
   .reel-badge {
     top: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .wrap,
+  .reel-outer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h1.hero {
+    font-size: clamp(32px, 10vw, 46px);
+  }
+  .hero-sub {
+    font-size: 15.5px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+  }
+  .hero-stat-slider {
+    width: 164px;
+    height: 112px;
+    bottom: 2px;
+  }
+  .hero-stat-slider .vcard {
+    padding: 13px 15px;
+    border-radius: 16px;
+  }
+  .vc-val {
+    font-size: 22px;
+  }
+  .hstat {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 138px;
+    padding: 13px 14px;
+  }
+  .hstat:nth-child(3) {
+    flex-basis: 100%;
+  }
+  .svc-mob {
+    grid-template-columns: 1fr;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .pstep {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    column-gap: 14px;
+    text-align: left;
+    align-items: start;
+  }
+  .pstep .dot {
+    grid-row: span 2;
+    margin: 0;
+  }
+  .ind-grid {
+    grid-template-columns: 1fr;
+  }
+  .carousel {
+    border-radius: 18px;
+  }
+  .slide {
+    padding: 34px 22px;
+  }
+  .cta {
+    padding: 58px 24px;
+    border-radius: 22px;
+  }
+  .cta h2 {
+    max-width: 12ch;
+  }
+  .foot-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .foot-brand p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding-bottom: 74px;
+  }
+  .wrap,
+  .reel-outer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  section {
+    padding: 64px 0;
+  }
+  .sec-head {
+    margin-bottom: 38px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+  }
+  .logo {
+    font-size: 18px;
+    gap: 9px;
+  }
+  .mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+  .mark svg {
+    width: 21px;
+    height: 21px;
+  }
+  .hamb {
+    padding: 10px;
+    margin-right: -10px;
+  }
+  .nav-links {
+    gap: 22px;
+  }
+  .nav-links a.lnk {
+    font-size: 19px;
+  }
+  .hero-tag {
+    padding: 7px 12px;
+    margin-bottom: 20px;
+  }
+  .hero-tag .mono {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+  h1.hero {
+    font-size: clamp(26px, 8vw, 32px);
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  .type-cursor {
+    width: 2px;
+  }
+  .hero-cta {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 12px;
+  }
+  .hstat {
+    min-width: 0;
+    width: 100%;
+  }
+  .ai-illus {
+    width: min(292px, 82vw);
+  }
+  .hero-stat-slider {
+    width: 150px;
+    height: 104px;
+  }
+  .vc-top {
+    gap: 6px;
+    margin-bottom: 7px;
+  }
+  .vc-lbl {
+    font-size: 8.5px;
+  }
+  .vc-up,
+  .vc-row {
+    font-size: 10.5px;
+  }
+  .who .card,
+  .feat,
+  .svc,
+  .proj .body,
+  .ind {
+    padding: 24px 20px;
+  }
+  .who-vis {
+    min-height: 260px;
+  }
+  .reel-frame {
+    border-radius: 18px;
+    aspect-ratio: 4 / 5;
+  }
+  .reel-caption {
+    width: calc(100% - 28px);
+    padding: 12px 14px;
+    bottom: 12px;
+    border-radius: 14px;
+  }
+  .reel-caption .eyebrow {
+    font-size: 10px;
+  }
+  .reel-badge {
+    max-width: calc(100% - 28px);
+    padding: 6px 12px;
+  }
+  .proj .top {
+    height: 126px;
+  }
+  .slides {
+    min-height: 260px;
+  }
+  .slide .q {
+    font-size: 17px;
+  }
+  .cta-btns .btn,
+  .news input,
+  .news button {
+    width: 100%;
+    justify-content: center;
+  }
+  .sticky-cta {
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    justify-content: center;
+    padding: 13px 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-tag .mono {
+    font-size: 9px;
+  }
+  h1.hero {
+    font-size: 25px;
+  }
+  .ai-illus {
+    width: min(260px, 80vw);
+  }
+  .hero-stat-slider {
+    width: 138px;
+    height: 98px;
+  }
+  .hero-stat-slider .vcard {
+    padding: 11px 12px;
+  }
+  .vc-val {
+    font-size: 20px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
