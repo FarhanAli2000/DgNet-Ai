@@ -54,12 +54,12 @@
     if(!wrap || !center || reduce) return;
 
     const SVC = [
-      {title:'AI Automation',       short:'AI\nAuto',       desc:'Automate repetitive tasks and workflows with intelligent, self-improving systems that learn and adapt over time.', energy:92, icon:'<path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z"/>'},
-      {title:'Custom Software',     short:'Custom\nSoftware',desc:'Bespoke software built precisely around how your business works — from architecture to deployment and beyond.', energy:86, icon:'<path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>'},
-      {title:'Web Applications',    short:'Web\nApps',       desc:'Fast, secure, and scalable web apps built with modern frameworks and best practices for every screen size.', energy:88, icon:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>'},
-      {title:'AI Chatbots',         short:'AI\nChatbots',    desc:'Conversational AI assistants that handle customer support, capture leads, and answer questions 24/7 automatically.', energy:79, icon:'<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>'},
-      {title:'Process Automation',  short:'Process\nAuto',   desc:'Connect tools, eliminate manual steps and let your teams focus on strategic, high-value work that drives growth.', energy:94, icon:'<path d="M4 4h6v6H4zM14 14h6v6h-6zM10 7h4M17 10v4"/>'},
-      {title:'System Integrations', short:'System\nInteg.',  desc:'Make your existing platforms communicate through reliable, maintained integrations that scale with your business.', energy:83, icon:'<circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 013 3v6"/>'},
+      {title:'Web Development', short:'Web\nDev', desc:'Fast, responsive, modern websites built to look great and convert visitors into customers — from business sites to ecommerce stores.', energy:92, icon:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>'},
+      {title:'Web & Mobile Applications', short:'Apps', desc:'Custom web and mobile applications built around your workflows — secure, scalable, and easy to use.', energy:88, icon:'<path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>'},
+      {title:'Digital Marketing', short:'Digital\nMarketing', desc:'Targeted campaigns that reach the right audience — paid ads, email, and strategy that turns clicks into customers.', energy:86, icon:'<path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/>'},
+      {title:'SEO & Content', short:'SEO', desc:'Search engine optimisation and content that helps your business rank higher on Google and attract steady, organic traffic.', energy:90, icon:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/>'},
+      {title:'Social Media Management', short:'Social\nMedia', desc:'Consistent, on-brand social media — content, scheduling, and engagement that builds your audience and presence.', energy:84, icon:'<path d="M4 12a8 8 0 0116 0M4 12v5a2 2 0 002 2h2M20 12v5a2 2 0 01-2 2h-2"/><path d="M8 13h.01M12 13h.01M16 13h.01"/>'},
+      {title:'AI Chatbots & Automation', short:'AI &\nAutomation', desc:'When your business needs it, we build AI chatbots for 24/7 support and automate repetitive processes to save your team time.', energy:82, icon:'<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>'},
     ];
 
     // Connections between related services [indexA, indexB]
@@ -214,7 +214,7 @@
 
   // typewriter
   if(!reduce){
-    const phrases=['AI-Powered Innovation.','Intelligent Automation.','Digital Transformation.','Smart Solutions.'];
+    const phrases=['Grow Your Business.','Reach More Customers.','Launch Faster.','Scale Online.'];
     let pi=0,ci=phrases[0].length,isDel=true;
     const tEl=document.getElementById('typingText');
     if(tEl){
@@ -240,6 +240,18 @@
       setTimeout(()=>c.classList.add('in'),i*280);
     });
   },reduce?0:1100);
+
+  // hero stat card slider
+  const heroStatCards = [...document.querySelectorAll('#heroStatSlider .stat-card')];
+  if(heroStatCards.length > 1 && !reduce){
+    let statIdx = heroStatCards.findIndex(card => card.classList.contains('active'));
+    if(statIdx < 0) statIdx = 0;
+    setInterval(()=>{
+      heroStatCards[statIdx].classList.remove('active');
+      statIdx = (statIdx + 1) % heroStatCards.length;
+      heroStatCards[statIdx].classList.add('active');
+    },2500);
+  }
 
   // hero stat counters
   function countUp(el,target,ms){
