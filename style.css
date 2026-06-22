@@ -26,6 +26,9 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+body.menu-open {
+  overflow: hidden;
+}
 h1,
 h2,
 h3,
@@ -329,6 +332,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 .logo {
   display: flex;
@@ -384,17 +388,43 @@ nav.scrolled .logo {
 .hamb {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   background: none;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  padding: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 12px;
+  transition:
+    background 0.25s var(--ease),
+    border-color 0.25s var(--ease);
 }
 .hamb span {
   width: 24px;
   height: 2px;
   background: var(--text);
-  transition: 0.3s;
+  border-radius: 2px;
+  transition:
+    transform 0.3s var(--ease),
+    opacity 0.2s var(--ease),
+    background 0.25s;
+}
+.hamb:hover,
+.hamb.is-open {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--line);
+}
+.hamb.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamb.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamb.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ---- HERO ---- */
@@ -2462,29 +2492,54 @@ footer {
   .nav-links {
     position: fixed;
     inset: 0;
-    background: #0b1020f7;
+    background:
+      radial-gradient(650px circle at 50% 0%, rgba(0, 212, 255, 0.13), transparent 55%),
+      #0b1020f7;
     backdrop-filter: blur(16px);
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
+    padding: 110px 26px 38px;
     font-size: 21px;
-    gap: 28px;
+    gap: 14px;
     transform: translateY(-100%);
-    transition: transform 0.4s var(--ease);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.4s var(--ease),
+      opacity 0.25s var(--ease);
     z-index: 90;
+    overflow-y: auto;
   }
   .nav-links.open {
     transform: none;
+    opacity: 1;
+    pointer-events: auto;
   }
   .nav-links a.lnk {
     color: var(--text);
+    width: min(420px, 100%);
+    margin: 0 auto;
+    padding: 15px 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.035);
+    text-align: center;
+    font-size: 18px;
+  }
+  .nav-links a.lnk::after {
+    display: none;
+  }
+  .nav-links .nav-cta-d {
+    display: inline-flex;
+    width: min(420px, 100%);
+    margin: 10px auto 0;
+    justify-content: center;
   }
   .hamb {
     display: flex;
     z-index: 100;
     flex: 0 0 auto;
-  }
-  .nav-cta-d {
-    display: none;
   }
   section {
     padding: 78px 0;
@@ -2618,12 +2673,17 @@ footer {
   .hamb {
     padding: 10px;
     margin-right: -10px;
+    width: 42px;
+    height: 42px;
   }
   .nav-links {
     gap: 22px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .nav-links a.lnk {
-    font-size: 19px;
+    font-size: 17px;
+    padding: 14px 16px;
   }
   .hero-tag {
     padding: 7px 12px;

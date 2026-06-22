@@ -14,8 +14,17 @@
 
   // mobile menu
   const hamb=document.getElementById('hamb'),links=document.getElementById('navlinks');
-  hamb.addEventListener('click',()=>links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  function setMenu(open){
+    links.classList.toggle('open',open);
+    hamb.classList.toggle('is-open',open);
+    hamb.setAttribute('aria-expanded',open?'true':'false');
+    hamb.setAttribute('aria-label',open?'Close menu':'Open menu');
+    document.body.classList.toggle('menu-open',open);
+  }
+  hamb.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
+  addEventListener('resize',()=>{if(innerWidth>900)setMenu(false);});
 
   // staggered reveals within grids
   document.querySelectorAll('.feat-grid,.svc-grid,.proj-grid,.ind-grid').forEach(g=>{
